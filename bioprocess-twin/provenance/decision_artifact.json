@@ -1,0 +1,100 @@
+{
+  "process": "CHO fed-batch mAb production (1 L)",
+  "decision_point_day": 6.0,
+  "observed_state": {
+    "day": 6.0,
+    "VCD_e6_cells_mL": 18.7,
+    "glucose_mM": 12.2,
+    "glutamine_mM": 2.9,
+    "lactate_mM": 24.9,
+    "ammonia_mM": 2.63,
+    "titer_mg_L": 298.6,
+    "volume_L": 1.0
+  },
+  "recommended_feeds": [
+    {
+      "day": 12.0,
+      "volume_L": 0.02,
+      "glc_conc_mM": 1250.0,
+      "gln_conc_mM": 150.0
+    }
+  ],
+  "predicted_kpis": {
+    "final_titer_mg_L": 1642.2,
+    "peak_VCD_e6_cells_mL": 24.12,
+    "max_lactate_mM": 57.5,
+    "final_lactate_mM": 57.5,
+    "max_ammonia_mM": 7.27,
+    "min_glucose_mM": -0.0,
+    "final_volume_L": 1.02,
+    "duration_days": 14.0
+  },
+  "contract": {
+    "max_lactate_mM": 60.0,
+    "max_ammonia_mM": 8.0,
+    "max_volume_L": 1.6
+  },
+  "contract_satisfied": true,
+  "contract_violations": [],
+  "objective": "maximize final mAb titer subject to the process contract",
+  "rationale": "Searched 256 feed strategies over the mechanistic twin from day 6. Selected the highest-titer plan that keeps lactate <= 57.5 mM and ammonia <= 7.27 mM. Larger boluses raise titer but push lactate/ammonia past the contract; the chosen plan sits at the feasible frontier.",
+  "decided_by": "mechanistic-search",
+  "twin_version": "CHOParams/illustrative-v1",
+  "alternatives_considered": [
+    {
+      "feeds_mL": [
+        0,
+        0,
+        0,
+        20
+      ],
+      "titer": 1642.2,
+      "max_lac": 57.5,
+      "max_amm": 7.27
+    },
+    {
+      "feeds_mL": [
+        20,
+        0,
+        0,
+        20
+      ],
+      "titer": 1642.2,
+      "max_lac": 57.5,
+      "max_amm": 7.27
+    },
+    {
+      "feeds_mL": [
+        40,
+        0,
+        0,
+        20
+      ],
+      "titer": 1642.2,
+      "max_lac": 57.5,
+      "max_amm": 7.27
+    },
+    {
+      "feeds_mL": [
+        60,
+        0,
+        0,
+        20
+      ],
+      "titer": 1642.2,
+      "max_lac": 57.5,
+      "max_amm": 7.27
+    },
+    {
+      "feeds_mL": [
+        0,
+        0,
+        0,
+        40
+      ],
+      "titer": 1620.8,
+      "max_lac": 57.9,
+      "max_amm": 7.62
+    }
+  ]
+}

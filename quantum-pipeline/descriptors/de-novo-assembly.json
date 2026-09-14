@@ -1,0 +1,38 @@
+{
+  "id": "de-novo-assembly-v1.0",
+  "dataType": "assembled_contig",
+  "schema": {
+    "format": "FASTA-CONTIG",
+    "reference": "reference-free"
+  },
+  "provenance": {
+    "sourceDataset": "sequencing-reads-v1.0",
+    "sourceFormat": "reads",
+    "processedBy": "qaoa-pennylane-default.qubit",
+    "method": "QuASeR de novo assembly (TSP->QUBO->QAOA)"
+  },
+  "policies": [
+    {
+      "name": "qubit_budget",
+      "rule": "n_qubits <= 16",
+      "action": "ENFORCE"
+    },
+    {
+      "name": "iteration_budget",
+      "rule": "max_iterations <= 200",
+      "action": "ENFORCE"
+    }
+  ],
+  "permissibleActions": [
+    {
+      "name": "assemble_reads",
+      "requires": ["reads"],
+      "outputs": ["contig"],
+      "policyChecks": ["qubit_budget", "iteration_budget"]
+    }
+  ],
+  "telemetrySchema": {
+    "logLevel": "DEBUG",
+    "fields": ["operation", "actor", "timestamp", "result", "policyViolations"]
+  }
+}

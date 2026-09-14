@@ -1,0 +1,4 @@
+numpy==2.2.6
+scipy==1.14.0
+# optional, only to let a language model drive the controller:
+# anthropic

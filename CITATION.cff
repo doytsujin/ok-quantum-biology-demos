@@ -1,0 +1,47 @@
+cff-version: 1.2.0
+title: "Quantum-biology demos: a governed quantum pipeline and a bioprocess yardstick"
+message: "If you use this software, please cite it."
+type: software
+authors:
+  - family-names: Chernov
+    given-names: Alexander
+    orcid: "https://orcid.org/0009-0007-3198-2712"
+repository-code: "https://github.com/doytsujin/ok-quantum-biology-demos"
+abstract: >-
+  Two small, runnable demonstrations of placing a computational step inside a
+  governed biology workflow. The first reproduces QuASeR's de novo assembly as
+  QAOA on PennyLane (three reads, nine qubits, verified against brute force),
+  trains a variational quantum classifier downstream of it, and places both
+  behind a dataset-descriptor runtime and a gateway with admission control,
+  rate limiting, a circuit-identity cache and an event record. The second is a
+  mechanistic fed-batch CHO bioreactor model under a contract of in-process
+  limits, with a search controller that chooses a feed plan and writes an
+  attributed decision artifact. Neither claims quantum advantage; every
+  instance is small enough to check classically, and each is checked.
+keywords:
+  - quantum computing
+  - QAOA
+  - variational quantum classifier
+  - PennyLane
+  - de novo assembly
+  - bioprocess
+  - CHO cell culture
+  - admission control
+  - provenance
+license: MIT
+version: 1.0.0
+references:
+  - type: article
+    title: "QuASeR: Quantum accelerated de novo DNA sequence reconstruction"
+    authors:
+      - family-names: Sarkar
+        given-names: Aritra
+      - family-names: Al-Ars
+        given-names: Zaid
+      - family-names: Bertels
+        given-names: Koen
+    journal: "PLoS ONE"
+    volume: 16
+    issue: 4
+    year: 2021
+    doi: "10.1371/journal.pone.0249850"

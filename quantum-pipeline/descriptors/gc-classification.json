@@ -1,0 +1,38 @@
+{
+  "id": "gc-classification-v1.0",
+  "dataType": "contig_label",
+  "schema": {
+    "format": "GC-LABEL",
+    "labels": ["AT-rich", "GC-rich"]
+  },
+  "provenance": {
+    "sourceDataset": "de-novo-assembly-v1.0",
+    "sourceFormat": "contig",
+    "processedBy": "vqc-pennylane-default.qubit",
+    "method": "variational quantum classifier (AngleEmbedding + BasicEntanglerLayers), trained by gradient descent"
+  },
+  "policies": [
+    {
+      "name": "qubit_budget",
+      "rule": "n_qubits <= 16",
+      "action": "ENFORCE"
+    },
+    {
+      "name": "training_budget",
+      "rule": "max_train_steps <= 200",
+      "action": "ENFORCE"
+    }
+  ],
+  "permissibleActions": [
+    {
+      "name": "classify_contig",
+      "requires": ["contig"],
+      "outputs": ["label"],
+      "policyChecks": ["qubit_budget", "training_budget"]
+    }
+  ],
+  "telemetrySchema": {
+    "logLevel": "DEBUG",
+    "fields": ["operation", "actor", "timestamp", "result", "policyViolations"]
+  }
+}
