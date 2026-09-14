@@ -62,4 +62,4 @@ This is independent research and technical work, unaffiliated with the author's 
 
 ## Citation and license
 
-Citation metadata is in [`CITATION.cff`](CITATION.cff). Code is released under the [MIT License](LICENSE).
+Version 1.0.0 is archived on Zenodo: [doi:10.5281/zenodo.22741061](https://doi.org/10.5281/zenodo.22741061). Citation metadata is in [`CITATION.cff`](CITATION.cff). Code is released under the [MIT License](LICENSE).

@@ -30,6 +30,8 @@ keywords:
   - provenance
 license: MIT
 version: 1.0.0
+date-released: "2026-09-14"
+doi: "10.5281/zenodo.22741061"
 references:
   - type: article
     title: "QuASeR: Quantum accelerated de novo DNA sequence reconstruction"
